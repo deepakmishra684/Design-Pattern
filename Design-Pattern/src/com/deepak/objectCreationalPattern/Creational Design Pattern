@@ -1,0 +1,45 @@
+------------Factory Method Design Pattern-------------
+***************************************************************************************************
+1:- A factory method design pattern is a object creational design pattern. It is used to instantiate an
+    object from one among a set of classes based on a logic.
+Example:- Class c= Class.forName(); 
+          Thread t=Thread.currentThread();  
+------------Abstract Factory Design Pattern-------------
+**************************************************************************************************
+1:- Factory of factories. To keep things simple you can understand it like, you have a set of ‘related’
+    factory method design pattern. Then you will put all those set of simple factories inside a factory
+    pattern. So in turn you need not be aware of the final concrete class that will be instantiated. 
+    You can program for the interface using the top factory.
+    
+-------------Singleton Design Pattern---------------------
+********************************************************************************************************
+1:- 
+
+-------------Builder Design Pattern-----------------------
+********************************************************************************************************
+1:- Builder pattern is used to construct a complex object step by step and the final step will return
+    the object. The process of constructing an object should be generic so that it can be used to create
+    different representations of the same object.
+    
+Ques:- What is the difference between abstract factory and builder pattern?
+
+Ans:-  Abstract factory may also be used to construct a complex object, then what is the difference with
+       builder pattern? In builder pattern emphasis is on ‘step by step’. Builder pattern will have many
+       number of small steps. Those every steps will have small units of logic enclosed in it. There wilh
+       also be a sequence involved. It will start from step 1 and will go on upto step n and the final 
+       step is returning the object. In these steps, every step will add some value in construction of
+       the object. That is you can imagine that the object grows stage by stage. Builder will return the 
+       object in last step. But in abstract factory how complex the built object might be, it will not
+       have step by step object construction.
+2:- Sample builder design pattern implementation in Java API
+--> DocumentBuilderFactory , StringBuffer, StringBuilder are some examples of builder pattern usage
+     in java API.
+     
+-------------------Prototype Design Pattern------------------------------------------------------
+************************************************************************************************888
+1:- When creating an object is time consuming and a costly affair and you already have a most similar
+    object instance in hand, then you go for prototype pattern. Instead of going through a time consuming
+    process to create a complex object, just copy the existing similar object and modify it according to
+    your needs.
+     
+     
