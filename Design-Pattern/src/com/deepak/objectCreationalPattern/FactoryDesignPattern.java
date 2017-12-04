@@ -11,6 +11,11 @@ interface MobilePhone {
 
 class Nokia implements MobilePhone {
 	@Override
+	public String toString() {
+		return "[mobileBrand= " + mobileBrand() + "]";
+	}
+
+	@Override
 	public String mobileBrand() {
 
 		return "Nokia";
@@ -24,11 +29,16 @@ class Sumsung implements MobilePhone {
 	public String mobileBrand() {
 		return "Sumsung";
 	}
+
+	@Override
+	public String toString() {
+		return "[mobileBrand= " + mobileBrand() + "]";
+	}
 }
 
 class MobilePhoneFactory {// Factory method pattern implementation that
 							// instantiates objects based on logic.
-	public MobilePhone getMobilePhone(String brandType) {
+	public static MobilePhone getMobilePhone(String brandType) {
 		MobilePhone phone = null;
 		if ("Nokia".equals(brandType))
 			phone = new Nokia();
@@ -41,8 +51,8 @@ class MobilePhoneFactory {// Factory method pattern implementation that
 
 public class FactoryDesignPattern {
 	public static void main(String[] args) {
-		MobilePhoneFactory mobileFactory = new MobilePhoneFactory();
-		MobilePhone mobilePhone = mobileFactory.getMobilePhone("Nokia");
+		//MobilePhoneFactory mobileFactory = new MobilePhoneFactory();
+		MobilePhone mobilePhone = MobilePhoneFactory.getMobilePhone("Nokia");
 		System.out.println(mobilePhone.toString());
 	}
 
